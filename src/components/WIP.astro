@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+// 1. On importe le composant Image natif d'Astro
+import { Image } from 'astro:assets';
+// 2. On importe votre image spécifique
+import wipImage from '../assets/work in progress.jpg';
+---
+
+<Layout>
+  <main class="flex items-center justify-center min-h-[calc(100vh-80px)] bg-gray-50/50 p-4">
+    
+    <div class="text-center">
+      <Image 
+        src={wipImage} 
+        alt="Page en cours de construction" 
+        class="max-w-2xl w-full h-auto rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300"
+      />
+      
+      <h2 class="mt-8 text-2xl font-bold text-gray-900">
+        Page en cours de rédaction
+      </h2>
+      <p class="mt-2 text-gray-500">
+        L'équipe de l'association travaille sur ce contenu. Revenez très vite !
+      </p>
+    </div>
+
+  </main>
+</Layout>
