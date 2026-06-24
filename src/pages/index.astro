@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import testPP from '../assets/test_PP.avif';
 ---
 
 <Layout>
@@ -8,10 +9,10 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-gray-900 uppercase mb-6">
         Association pour l'étude de <br/>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">l'Europe Sociale</span>
+        <span class="text-transparent bg-clip-text bg-linear-to-r from-cyan-500 to-blue-600">l'Europe Sociale</span>
       </h1>
-      <p class="max-w-2xl mx-auto text-xl text-gray-600 mb-10">
-        Notre mission : compiler l'information et décrypter la réglementation européenne qui impacte la protection sociale et le syndicalisme.
+      <p class="max-w-2xl mx-auto text-xl text-gray-900 mb-10">
+        Notre mission : compiler l'information et décrypter la réglementation européenne qui impacte la protection sociale et le syndicalisme afin de <span class="font-bold text-blue-500">Vous Accompagner</span>.
       </p>
       <div class="flex justify-center gap-4">
         <a href="/veille" class="px-8 py-3 text-base font-semibold text-white bg-cyan-600 rounded-xl hover:bg-cyan-700 transition-colors shadow-sm">
@@ -48,7 +49,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-3">Veille Réglementaire</h3>
           <p class="text-gray-600">
-            Suivi constant des décisions de la Commission européenne et diffusion d'articles pour comprendre l'évolution du droit social.
+            Suivi des décisions de la Commission européenne et diffusion d'articles pour comprendre l'évolution du droit social.
           </p>
         </article>
 
@@ -61,7 +62,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-3">Formation & Conférences</h3>
           <p class="text-gray-600">
-            Organisation d'événements et de formations pour les acteurs de la protection sociale, en lien avec nos partenaires.
+            Organisation d'événements et de formations pour les acteurs de la protection sociale.
           </p>
         </article>
 
@@ -84,31 +85,73 @@ import Layout from '../layouts/Layout.astro';
   <!-- Section Sources et Références -->
   <section class="py-16 bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-2xl font-bold text-gray-900 mb-8">Nos Sources & Partenaires</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Nos Sources </h2>
       <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
         <!-- Remplacer les div par de vraies balises <img> quand tu auras les logos -->
         <a href="https://www.thinktankcraps.fr" target="_blank" rel="noopener noreferrer" class="text-lg font-bold hover:text-cyan-600">Think Tank CRAPS</a>
-        <span class="text-lg font-bold hover:text-cyan-600 cursor-pointer">AEIP</span>
         <a href="https://op.europa.eu/fr/web/general-publications/publications" target="_blank" rel="noopener noreferrer" class="text-lg font-bold hover:text-cyan-600">Commission Européenne</a>
         <a href="https://eiopa.europa.eu/" target="_blank" rel="noopener noreferrer" class="text-lg font-bold hover:text-cyan-600">EIOPA</a>
       </div>
     </div>
   </section>
 
-  <!-- Section Contact rapide -->
-  <section class="py-16 bg-gray-900 text-white text-center">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold mb-4">L'équipe de l'AEES</h2>
-      <p class="text-gray-300 mb-8 text-lg">
-        L'association est dirigée par Menouar (Président), Ludovic (Trésorier) et Audrai (Secrétaire). <br/>
-        Pour toute demande de formation ou d'intervention, n'hésitez pas à nous écrire.
-      </p>
-      <a href="mailto:aees.20101992@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold rounded-xl transition-colors">
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-        aees.20101992@gmail.com
-      </a>
+  <!-- Section Contact rapide & Équipe -->
+  <section class="py-16 bg-gray-900 text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Notre équipe</h2>
+        <p class="text-gray-300 text-lg">
+          Pour toute demande de formation ou d'intervention, n'hésitez pas à nous contacter.
+        </p>
+      </div>
+
+      <!-- Grille de l'équipe -->
+      <div class="flex flex-col md:flex-row justify-center items-stretch gap-8 md:gap-12 mb-12">
+        
+        <!-- Membre 1 : Menouar -->
+        <div class="flex items-center gap-5 bg-gray-800 p-6 rounded-3xl border border-gray-700 w-full md:w-76 min-h-32">
+          <img src={testPP.src} alt="Photo de l'équipe AEES" class="w-20 h-20 rounded-full shrink-0 object-cover" />
+          <div class="text-left">
+            <h3 class="text-xl font-bold text-white">Menouar</h3>
+            <p class="text-cyan-400 text-base font-medium">Président</p>
+          </div>
+        </div>
+
+        <!-- Membre 2 : Ludovic -->
+        <div class="flex items-center gap-5 bg-gray-800 p-6 rounded-3xl border border-gray-700 w-full md:w-76 min-h-32">
+          <div class="w-20 h-20 bg-gray-600 rounded-full shrink-0 object-cover overflow-hidden flex items-center justify-center">
+            <svg class="w-10 h-10 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <div class="text-left">
+            <h3 class="text-xl font-bold text-white">Ludovic</h3>
+            <p class="text-cyan-400 text-base font-medium">Trésorier</p>
+          </div>
+        </div>
+
+        <!-- Membre 3 : Audrai -->
+        <div class="flex items-center gap-5 bg-gray-800 p-6 rounded-3xl border border-gray-700 w-full md:w-76 min-h-32">
+          <img src={testPP.src} alt="Photo de l'équipe AEES" class="w-20 h-20 rounded-full shrink-0 object-cover" />
+          <div class="text-left">
+            <h3 class="text-xl font-bold text-white">Audrai</h3>
+            <p class="text-cyan-400 text-base font-medium">Secrétaire</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bouton de contact -->
+      <div class="text-center">
+        <a href="mailto:aees.20101992@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold rounded-xl transition-colors shadow-lg">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          aees.20101992@gmail.com
+        </a>
+      </div>
+
     </div>
   </section>
 </Layout>
