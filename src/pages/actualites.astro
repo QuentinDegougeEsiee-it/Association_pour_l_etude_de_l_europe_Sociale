@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Voici un exemple de structure de données. 
+// Plus tard, ce tableau pourra être rempli automatiquement via des flux RSS ou des fichiers Markdown.
+const articles = [
+  {
+    titre: "Nouvelle directive sur les droits sociaux fondamentaux",
+    source: "Commission Européenne",
+    type: "PDF",
+    date: "25 Juin 2026",
+    description: "Publication officielle détaillant les nouvelles orientations de la Commission pour la protection des travailleurs transfrontaliers.",
+    lien: "https://op.europa.eu/fr/web/general-publications/publications",
+    couleurBadge: "bg-blue-100 text-blue-800"
+  },
+  {
+    titre: "Rapport sur les pensions de retraite en Europe",
+    source: "EIOPA",
+    type: "Article",
+    date: "18 Juin 2026",
+    description: "Analyse technique et recommandations de l'EIOPA concernant l'évolution des régimes de retraite face à l'inflation.",
+    lien: "https://eiopa.europa.eu/",
+    couleurBadge: "bg-purple-100 text-purple-800"
+  },
+  {
+    titre: "L'impact du dialogue social sur la compétitivité",
+    source: "Think Tank CRAPS",
+    type: "Analyse",
+    date: "10 Juin 2026",
+    description: "Une réflexion de fond sur la manière dont le syndicalisme moderne peut s'intégrer dans les nouveaux modèles d'entreprise.",
+    lien: "https://www.thinktankcraps.fr",
+    couleurBadge: "bg-orange-100 text-orange-800"
+  },
+  {
+    titre: "Position paper : Les fonds de pension paritaires",
+    source: "AEIP",
+    type: "PDF",
+    date: "02 Juin 2026",
+    description: "Document de position de l'AEIP visant à défendre le modèle paritaire dans la révision de la réglementation européenne.",
+    lien: "#",
+    couleurBadge: "bg-emerald-100 text-emerald-800"
+  }
+];
+---
+
+<Layout>
+  <!-- En-tête de la page -->
+  <section class="bg-gray-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-black tracking-tight mb-4">Actualités & Veille Réglementaire</h1>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        Retrouvez les dernières publications, analyses et textes officiels impactant la protection sociale et le syndicalisme en Europe.
+      </p>
+    </div>
+  </section>
+
+  <!-- Grille des articles/PDF -->
+  <section class="py-16 bg-gray-50 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {articles.map((article) => (
+          <article class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+            
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class={`px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full ${article.couleurBadge}`}>
+                  {article.source}
+                </span>
+                <span class="text-sm text-gray-500 font-medium flex items-center gap-1">
+                  <!-- Icône calendrier -->
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  {article.date}
+                </span>
+              </div>
+              
+              <h2 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-cyan-600 transition-colors">
+                {article.titre}
+              </h2>
+              
+              <p class="text-gray-600 mb-6 line-clamp-3">
+                {article.description}
+              </p>
+            </div>
+
+            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+              <span class="text-sm font-semibold text-gray-400 flex items-center gap-1">
+                {article.type === "PDF" ? (
+                  <svg class="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                ) : (
+                  <svg class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H15" />
+                  </svg>
+                )}
+                Format : {article.type}
+              </span>
+              
+              <a href={article.lien} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-cyan-700 bg-cyan-50 rounded-lg hover:bg-cyan-600 hover:text-white transition-colors">
+                {article.type === "PDF" ? "Télécharger le PDF" : "Lire la suite"}
+                <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+            
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+</Layout>
