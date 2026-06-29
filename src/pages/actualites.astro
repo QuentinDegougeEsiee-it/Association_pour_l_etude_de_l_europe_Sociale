@@ -156,8 +156,7 @@ const articles = [
   document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput') as HTMLInputElement;
     const sortSelect = document.getElementById('sortSelect') as HTMLSelectElement;
-    const grid = document.getElementById('articles-grid');
-    
+    const grid = document.getElementById('articles-grid') as HTMLElement;    
     if (!searchInput || !sortSelect || !grid) return;
 
     // Récupérer toutes les cartes sous forme de tableau modifiable
