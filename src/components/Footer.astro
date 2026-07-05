@@ -1,0 +1,65 @@
+---
+// src/components/Footer.astro
+---
+
+<footer class="bg-gray-900 text-gray-300 border-t border-gray-800 mt-auto">
+  <!-- Remplacement de py-12 par py-8 pour réduire l'espacement haut/bas -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <!-- Réduction de gap-8 à gap-6 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Colonne 1 : À propos -->
+      <div class="space-y-3">
+        <span class="font-extrabold text-xl tracking-tight text-white">
+          Europe<span class="text-cyan-500 font-medium">Sociale</span>
+        </span>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Association pour l'étude de l'Europe Sociale (AEES). Notre mission est de décrypter, compiler et rendre accessible l'information réglementaire européenne.
+        </p>
+      </div>
+
+      <!-- Colonne 2 : Liens rapides -->
+      <div>
+        <h3 class="text-white font-bold mb-3 uppercase tracking-wider text-sm">Navigation</h3>
+        <!-- Remplacement de space-y-2 par space-y-1.5 -->
+        <ul class="space-y-1.5 text-sm">
+          <li><a href="/" class="hover:text-cyan-400 transition-colors">Accueil</a></li>
+          <li><a href="/QuiSommesNous" class="hover:text-cyan-400 transition-colors">Qui sommes-nous ?</a></li>
+          <li><a href="/actualites" class="hover:text-cyan-400 transition-colors">Actualités & Veille</a></li>
+          <li><a href="/contact" class="hover:text-cyan-400 transition-colors">Nous contacter</a></li>
+        </ul>
+      </div>
+
+      <!-- Colonne 3 : Contact -->
+      <div>
+        <h3 class="text-white font-bold mb-3 uppercase tracking-wider text-sm">Contact</h3>
+        <!-- Remplacement de space-y-3 par space-y-2 -->
+        <ul class="space-y-2 text-sm">
+          <li class="flex items-center gap-3">
+            <svg class="w-4 h-4 text-cyan-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <a href="mailto:aees.20101992@gmail.com" class="hover:text-cyan-400 transition-colors">
+              aees.20101992@gmail.com
+            </a>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <span class="text-gray-400">Bureau : Menouar (Président), Ludovic (Trésorier), Audrai (Secrétaire)</span>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <!-- Barre inférieure (Réduction de mt-12 pt-8 à mt-8 pt-6) -->
+    <div class="border-t border-gray-800 mt-4 pt-2 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+      <p>&copy; 2026 AEES. Tous droits réservés.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-white transition-colors">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+</footer>

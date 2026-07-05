@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
-import '../styles/global.css'; /* <-- C'est cette ligne qui change tout ! */
+import Footer from '../components/Footer.astro'; /* <-- Ajoute cette ligne */
+import '../styles/global.css';
 ---
 
 <!doctype html>
@@ -10,9 +11,13 @@ import '../styles/global.css'; /* <-- C'est cette ligne qui change tout ! */
 		<meta name="viewport" content="width=device-width" />
 		<title>Association pour l'Étude de l'Europe Sociale</title>
 	</head>
-	<body>
+    <!-- flex et min-h-screen permettent de pousser le footer tout en bas même si la page est vide -->
+	<body class="flex flex-col min-h-screen"> 
         <Header /> 
         
+        <!-- Le contenu spécifique de chaque page viendra s'insérer ici -->
         <slot /> 
+
+        <Footer /> 
 	</body>
 </html>

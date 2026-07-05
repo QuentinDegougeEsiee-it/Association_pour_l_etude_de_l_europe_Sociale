@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+import testPP from '../assets/test_PP.avif';
+---
+
+<Layout>
+  <section class="relative bg-gray-900 text-white py-20 lg:py-28 overflow-hidden border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <h1 class="text-4xl sm:text-5xl font-black tracking-tight mb-6">
+        Qui sommes-nous ?
+      </h1>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        Découvrez notre histoire, notre engagement pour la protection sociale européenne et les visages de l'AEES.
+      </p>
+    </div>
+    
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full overflow-hidden -z-10 opacity-20 pointer-events-none">
+      <div class="absolute top-[-20%] left-[20%] w-96 h-96 bg-cyan-500 rounded-full mix-blend-screen filter blur-[100px] opacity-40"></div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <div class="space-y-6">
+          <span class="text-cyan-600 font-bold tracking-wider uppercase text-sm">Les origines</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Construire un pont vers l'Europe</h2>
+          <div class="text-lg text-gray-600 leading-relaxed space-y-4">
+            <p>
+              L'Association pour l'étude de l'Europe Sociale (AEES) a été créée sous l'impulsion de son fondateur, <strong>Alain Tisserant</strong>. Depuis ses débuts, l'association s'est donnée pour vocation de relier les instances européennes aux acteurs sociaux présents sur le terrain.
+            </p>
+            <p>
+              Face à la complexité grandissante de la législation européenne, notre objectif est clair : décrypter, compiler et rendre accessible l'information réglementaire qui impacte directement la protection sociale et le syndicalisme.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-cyan-50 p-8 sm:p-10 rounded-3xl border border-cyan-100 relative">
+          <svg class="absolute top-6 text-cyan-200 w-16 h-16 -left-4 -z-0" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+          </svg>
+          <div class="relative z-10">
+            <p class="text-xl font-medium text-gray-900 leading-snug">
+              "L'Europe sociale ne se fera pas sans une compréhension claire de ses règles. Notre mission est de donner aux acteurs sociaux les clés pour anticiper et agir."
+            </p>
+            <div class="mt-6">
+              <p class="font-bold text-cyan-700">Alain Tisserant</p>
+              <p class="text-cyan-600 text-sm">Fondateur de l'AEES</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900">Nos missions principales</h2>
+        <p class="mt-4 text-lg text-gray-600">Trois piliers pour accompagner les professionnels de la protection sociale.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-cyan-100 text-cyan-600 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">La Veille Réglementaire</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Se tenir au courant des dernières directives de la Commission européenne et des recommandations de l'EIOPA.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H15" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">La Formation</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Organiser des interventions et des conférences ciblées pour les professionnels du secteur.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">La Mise en réseau</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Collaborer avec des entités telles que l'AEIP ou le Think Tank CRAPS pour donner de la visibilité aux réflexions sociales.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- La "grande case" globale qui contient l'équipe -->
+      <div class="bg-gray-900 text-white rounded-[2.5rem] p-10 md:p-14 shadow-2xl border border-gray-800">
+        
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Notre équipe</h2>
+          <p class="text-gray-300 text-lg">
+            Pour toute demande de formation ou d'intervention, n'hésitez pas à nous contacter.
+          </p>
+        </div>
+
+        <!-- Grille de l'équipe -->
+        <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 md:gap-8 mb-12 w-fit mx-auto">
+          
+          <!-- Membre 1 : Menouar -->
+          <div class="flex items-center gap-4 bg-gray-800 p-5 rounded-3xl border border-gray-700 w-full md:w-72">
+            <img src={testPP.src} alt="Photo de l'équipe AEES" class="w-16 h-16 rounded-full shrink-0 object-cover" />
+            <div class="text-left">
+              <h3 class="text-xl font-bold text-white">Menouar</h3>
+              <p class="text-cyan-400 text-sm font-medium">Président</p>
+            </div>
+          </div>
+
+          <!-- Membre 2 : Ludovic -->
+          <div class="flex items-center gap-4 bg-gray-800 p-5 rounded-3xl border border-gray-700 w-full md:w-72">
+            <div class="w-16 h-16 bg-gray-600 rounded-full shrink-0 object-cover overflow-hidden flex items-center justify-center">
+              <svg class="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <div class="text-left">
+              <h3 class="text-xl font-bold text-white">Ludovic</h3>
+              <p class="text-cyan-400 text-sm font-medium">Trésorier</p>
+            </div>
+          </div>
+
+          <!-- Membre 3 : Audrai -->
+          <div class="flex items-center gap-4 bg-gray-800 p-5 rounded-3xl border border-gray-700 w-full md:w-72">
+            <img src={testPP.src} alt="Photo de l'équipe AEES" class="w-16 h-16 rounded-full shrink-0 object-cover" />
+            <div class="text-left">
+              <h3 class="text-xl font-bold text-white">Audrai</h3>
+              <p class="text-cyan-400 text-sm font-medium">Secrétaire</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bouton de contact -->
+        <div class="text-center">
+          <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold rounded-xl transition-colors shadow-lg">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            Nous contacter
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
