@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// J'ai ajouté une clé 'dateISO' (YYYY-MM-DD) pour faciliter le tri mathématique en JavaScript
 const articles = [
   {
     titre: "Nouvelle directive sur les droits sociaux fondamentaux",
@@ -26,7 +25,7 @@ const articles = [
   {
     titre: "L'impact du dialogue social sur la compétitivité",
     source: "Think Tank CRAPS",
-    type: "Analyse",
+    type: "Article", // Changé de Analyse à Article pour correspondre aux filtres
     date: "10 Juin 2026",
     dateISO: "2026-06-10",
     description: "Une réflexion de fond sur la manière dont le syndicalisme moderne peut s'intégrer dans les nouveaux modèles d'entreprise.",
@@ -55,58 +54,96 @@ const articles = [
         Retrouvez les dernières publications, analyses et textes officiels impactant la protection sociale et le syndicalisme en Europe.
       </p>
     </div>
-    
   </section>
 
   <!-- Section de contenu -->
-  <section class="py-12 bg-gray-50 min-h-screen ">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-      <div class="hidden md:flex items-center pb-3">
+  <section class="py-12 bg-gray-50 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Bouton d'ajout admin (caché sur mobile, visible sur desktop) -->
+      <div class="hidden md:flex items-center pb-3 justify-end">
         <a 
-          href="/Admin" 
-          class="inline-flex items-center justify-center px-5 py-2.5  text-sm font-semibold text-white bg-cyan-500 rounded-xl hover:bg-cyan-600 shadow-sm hover:shadow transition-all duration-200 hover:-translate-y-0.5"
+          href="/admin" 
+          class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-cyan-500 rounded-xl hover:bg-cyan-600 shadow-sm hover:shadow transition-all duration-200 hover:-translate-y-0.5"
         >
-          ajouter une publication
+          Ajouter une publication
         </a>
       </div>
       
-      <!-- Contrôles : Recherche et Tri -->
-      <div class="flex flex-col md:flex-row gap-4 justify-between items-center mb-10 bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+      <!-- Contrôles : Recherche, Filtres et Tri -->
+      <div class="mb-10 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
         
-        <!-- Barre de recherche -->
-        <div class="relative w-full md:w-1/2">
-          <svg class="w-5 h-5 text-gray-400 absolute left-3 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          <input 
-            type="text" 
-            id="searchInput" 
-            placeholder="Rechercher par titre..." 
-            class="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-all"
-          >
+        <div class="flex flex-col md:flex-row gap-4 justify-between items-center">
+          
+          <!-- Ligne du haut : Recherche principale -->
+          <div class="relative w-full">
+            <svg class="w-5 h-5 text-gray-400 absolute left-3 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input 
+              type="text" 
+              id="searchInput" 
+              placeholder="Rechercher par titre..." 
+              class="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-all"
+            >
+          </div>
+
         </div>
 
-        <!-- Menu de tri -->
-        <div class="flex items-center gap-2 w-full md:w-auto">
-          <label for="sortSelect" class="text-sm font-medium text-gray-600 whitespace-nowrap">Trier par :</label>
-          <select 
-            id="sortSelect" 
-            class="w-full md:w-auto px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none cursor-pointer transition-all"
-          >
-            <option value="desc">Plus récent</option>
-            <option value="asc">Plus ancien</option>
-          </select>
+        <!-- Ligne du bas : Filtres et Tri -->
+        <div class="flex flex-col md:flex-row gap-4 items-center justify-between mt-4 pt-4 border-t border-gray-100">
+          
+          <!-- Filtres (Format et Source) -->
+          <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+            
+            <div class="flex items-center gap-2">
+              <label for="formatFilter" class="text-sm font-medium text-gray-600 whitespace-nowrap">Format :</label>
+              <select id="formatFilter" class="w-full sm:w-auto px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none cursor-pointer transition-all text-sm">
+                <option value="all">Tous les formats</option>
+                <option value="article">Article</option>
+                <option value="pdf">PDF</option>
+              </select>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <label for="sourceFilter" class="text-sm font-medium text-gray-600 whitespace-nowrap">Source :</label>
+              <select id="sourceFilter" class="w-full sm:w-auto px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none cursor-pointer transition-all text-sm">
+                <option value="all">Toutes les sources</option>
+                <option value="think tank craps">Think Tank CRAPS</option>
+                <option value="commission européenne">Commission Européenne</option>
+                <option value="eiopa">EIOPA</option>
+                <option value="aeip">AEIP</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            
+          </div>
+
+          <!-- Menu de tri (Date) -->
+          <div class="flex items-center gap-2 w-full md:w-auto">
+            <label for="sortSelect" class="text-sm font-medium text-gray-600 whitespace-nowrap">Trier par :</label>
+            <select 
+              id="sortSelect" 
+              class="w-full md:w-auto px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none cursor-pointer transition-all text-sm"
+            >
+              <option value="desc">Plus récent</option>
+              <option value="asc">Plus ancien</option>
+            </select>
+          </div>
+
         </div>
 
       </div>
 
-      <!-- Grille des articles/PDF (Ajout d'un ID et de data-attributes pour le JS) -->
+      <!-- Grille des articles/PDF -->
       <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {articles.map((article) => (
           <article 
             class="article-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
             data-title={article.titre.toLowerCase()}
             data-date={article.dateISO}
+            data-format={article.type.toLowerCase()}
+            data-source={article.source.toLowerCase()}
           >
             <div>
               <div class="flex items-center justify-between mb-4">
@@ -159,28 +196,39 @@ const articles = [
   </section>
 </Layout>
 
-<!-- Script Client pour gérer la recherche et le tri -->
+<!-- Script Client pour gérer la recherche, les filtres et le tri -->
 <script>
-  // Ce code s'exécute dans le navigateur de l'utilisateur
   document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput') as HTMLInputElement;
     const sortSelect = document.getElementById('sortSelect') as HTMLSelectElement;
+    const formatFilter = document.getElementById('formatFilter') as HTMLSelectElement;
+    const sourceFilter = document.getElementById('sourceFilter') as HTMLSelectElement;
     const grid = document.getElementById('articles-grid') as HTMLElement;    
-    if (!searchInput || !sortSelect || !grid) return;
+    
+    if (!searchInput || !sortSelect || !formatFilter || !sourceFilter || !grid) return;
 
-    // Récupérer toutes les cartes sous forme de tableau modifiable
     const cards = Array.from(grid.getElementsByClassName('article-card')) as HTMLElement[];
 
     function updateView() {
       const searchTerm = searchInput.value.toLowerCase().trim();
       const sortOrder = sortSelect.value;
+      const formatValue = formatFilter.value;
+      const sourceValue = sourceFilter.value;
 
-      // 1. Gérer la recherche (cacher ou afficher les cartes)
+      // 1. Gérer les filtres (Recherche textuelle + Format + Source)
       let visibleCards = cards.filter(card => {
         const title = card.getAttribute('data-title') || '';
-        const isMatch = title.includes(searchTerm);
-        card.style.display = isMatch ? 'flex' : 'none'; // Utiliser 'flex' car nos cartes ont 'flex-col'
-        return isMatch;
+        const format = card.getAttribute('data-format') || '';
+        const source = card.getAttribute('data-source') || '';
+
+        const matchesSearch = title.includes(searchTerm);
+        const matchesFormat = formatValue === 'all' || format === formatValue;
+        const matchesSource = sourceValue === 'all' || source === sourceValue;
+
+        const isVisible = matchesSearch && matchesFormat && matchesSource;
+        
+        card.style.display = isVisible ? 'flex' : 'none';
+        return isVisible;
       });
 
       // 2. Gérer le tri sur les cartes visibles
@@ -191,13 +239,15 @@ const articles = [
         return sortOrder === 'desc' ? dateB - dateA : dateA - dateB;
       });
 
-      // 3. Réorganiser l'ordre dans le HTML (DOM)
+      // 3. Réorganiser l'ordre dans le HTML
       visibleCards.forEach(card => grid.appendChild(card));
     }
 
     // Écouter les événements
     searchInput.addEventListener('input', updateView);
     sortSelect.addEventListener('change', updateView);
+    formatFilter.addEventListener('change', updateView);
+    sourceFilter.addEventListener('change', updateView);
 
     // Lancer une première fois au chargement
     updateView();
